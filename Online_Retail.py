@@ -49,9 +49,7 @@ df = df[~df["Country"].isin(["Unspecified", "European Community"])]
 
 print("Clean rows:", len(df), "| Customers:", df["CustomerID"].nunique())
 
-# ---------------------------------------------------------------
-# 3) RFM
-# ---------------------------------------------------------------
+
 snapshot = df["InvoiceDate"].max() + pd.Timedelta(days=1)
 
 rfm = df.groupby("CustomerID").agg(
