@@ -12,8 +12,7 @@ if INPUT_FILE.lower().endswith(".csv"):
         df = pd.read_csv(INPUT_FILE, encoding="utf-8")
     except UnicodeDecodeError:
         df = pd.read_csv(INPUT_FILE, encoding="ISO-8859-1")
-else:
-    df = pd.concat(pd.read_excel(INPUT_FILE, sheet_name=None).values(), ignore_index=True)
+
 
 print("Raw rows:", len(df))
 
